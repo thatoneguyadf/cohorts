@@ -7,14 +7,10 @@
 
             var vm = this;
 
-            debugger;
-
             vm.tabs = [
                 { title: 'Projects' },
                 { title: 'Users' }
             ];
-
-            debugger;
 
     });
 
