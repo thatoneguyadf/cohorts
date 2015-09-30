@@ -1,0 +1,6 @@
+{
+
+  "debug": true,
+  "predef": ["angular", "_", "moment"]
+
+}

@@ -1,0 +1,64 @@
+<div>
+
+    <div class="modal-header">
+
+        <h1>Edit {{ projectEditController.project.title }}</h1>
+
+    </div>
+
+    <div class="modal-body">
+
+        <form name="projectEditForm">
+
+            <div class="form-group">
+
+                <label for="title">Title</label>
+
+                <input class="form-control"
+                       id="title"
+                       required
+                       type="text"
+                       data-ng-model="projectEditController.project.title" />
+
+            </div>
+
+            <div class="form-group">
+                <label for="userId">User</label>
+                <select name="userId"
+                        required
+                        data-ng-options="user as user.fullName() for user in projectEditController.users"
+                        data-ng-model="projectEditController.project.user"
+                        class="form-control"
+                        id="userId"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                    <textarea name="description"
+                              id="description"
+                              rows="10"
+                              required
+                              class="form-control"
+                              data-ng-model="projectEditController.project.detail"></textarea>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <button data-ng-disabled="projectEditForm.$invalid"
+                class="btn btn-primary"
+                data-ng-click="projectEditController.close()">
+            Save
+        </button>
+
+        <button class="btn btn-danger"
+                data-ng-click="projectEditController.dismiss()">
+            Cancel
+        </button>
+
+    </div>
+
+</div>

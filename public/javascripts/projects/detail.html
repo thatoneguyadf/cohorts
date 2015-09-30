@@ -1,0 +1,52 @@
+<div data-ui-view>
+
+    <div class="pull-right">
+
+        <a data-ng-click="projectController.editProject(projectController.project)"
+           class="btn">
+            <i class="fa fa-pencil"></i>
+            Edit
+        </a>
+
+        <a data-ng-click="projectController.remove(projectController.project)"
+           style="color: red; margin-left: 10px;"
+           class="btn">
+            <i class="fa fa-ban"></i>
+            Delete
+        </a>
+
+    </div>
+
+    <h1>{{ projectController.project.title }}</h1>
+
+    <table class="table table-responsive table-striped">
+
+        <thead>
+        <tr>
+
+            <th>User</th>
+            <th>Email</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+
+            <td>{{ projectController.project.user.fullName() }}</td>
+            <td>{{ projectController.project.user.email }}</td>
+
+        </tr>
+        </tbody>
+
+    </table>
+
+    <h2>Project Details</h2>
+
+    <p>
+        {{ projectController.project.detail }}
+    </p>
+
+    <p><a data-ui-sref="projects">&laquo; Back</a></p>
+
+</div>

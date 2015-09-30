@@ -1,0 +1,15 @@
+<div data-ui-view>
+
+    <a class="btn pull-right"
+       data-ng-click="projectsController.addProject()">
+        <i class="fa fa-plus"></i>
+        Add Project
+    </a>
+
+    <h1>Projects</h1>
+
+    <project-table data-projects="projectsController.projects" data-edit="projectsController.editProject"
+                   data-remove="projectsController.remove">
+    </project-table>
+
+</div>
