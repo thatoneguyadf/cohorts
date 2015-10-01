@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var app = express();
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 require('./models/user.js');
 require('./models/project.js');
@@ -26,6 +28,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
+
+app.use(passport.initialize());
+passport.use(new LocalStrategy({usernameField: 'email'}, function (email, password, next) {
+  var User = mongoose.model('User');
+
+  User.findOne({email: email}, function (err, user) {
+    if (err) return next(err);
+    if (!user) return next(null, false, {message: 'Incorrect username.'});
+
+    user.validPassword(password, function (err, isMatch) {
+      if (err) return next(err);
+      if (!isMatch) return next(null, false);
+      return next(null, user);
+    });
+  });
+}));
 
 app.use('/', routes);
 app.use('/users', users);

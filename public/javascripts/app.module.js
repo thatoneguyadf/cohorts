@@ -40,6 +40,31 @@
                             return Projects.find($stateParams.projectId);
                         }
                     }
+                })
+                .state('users', {
+                    url: '/users',
+                    templateUrl: 'partials/users/index.html',
+                    controller: 'UsersController',
+                    controllerAs: 'usersController',
+                    resolve: {
+                        users: function (Users) {
+                            return Users.get();
+                        },
+                        projects: function (Projects, users) {
+                            return Projects.get();
+                        }
+                    }
+                })
+                .state('users.detail', {
+                    url: '/:userId',
+                    templateUrl: 'partials/users/detail.html',
+                    controller: 'UserController',
+                    controllerAs: 'userController',
+                    resolve: {
+                        user: function (Users, $stateParams, users) {
+                            return Users.find($stateParams.userId);
+                        }
+                    }
                 });
 
         });

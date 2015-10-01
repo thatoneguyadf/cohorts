@@ -10,11 +10,15 @@
 </head>
 <body>
 
-    <div ng-controller="TabsCtrl">
+    <div>
         <tabset>
-            <tab ng-repeat="tab in TabsCtrl.tabs"
-                 heading="{{ tab.title }}"
-                 active="tab.active">
+            <tab heading="Projects"
+                 active="tab.active"
+                 data-ui-sref="projects">
+            </tab>
+            <tab heading="Users"
+                 active="tab.active"
+                 data-ui-sref="users">
             </tab>
         </tabset>
     </div>

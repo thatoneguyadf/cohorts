@@ -1,0 +1,15 @@
+<div data-ui-view>
+
+    <a class="btn pull-right"
+       data-ng-click="usersController.addUser()">
+        <i class="fa fa-plus"></i>
+        Add User
+    </a>
+
+    <h1>Users</h1>
+
+    <user-table data-users="usersController.users" data-edit="usersController.editUser"
+                   data-remove="usersController.remove">
+    </user-table>
+
+</div>
