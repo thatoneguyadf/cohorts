@@ -1,0 +1,66 @@
+<div data-ui-view>
+
+    <div class="pull-right">
+
+        <a data-ng-click="userController.editUser(userController.user)"
+           class="btn">
+            <i class="fa fa-pencil"></i>
+            Edit
+        </a>
+
+        <a data-ng-click="userController.remove(userController.user)"
+           style="color: red; margin-left: 10px;"
+           class="btn">
+            <i class="fa fa-ban"></i>
+            Delete
+        </a>
+
+    </div>
+
+    <h1>{{ userController.user.fullName() }}</h1>
+
+    <table class="table table-responsive">
+
+        <tbody>
+        <tr>
+
+            <td>First Name</td>
+            <td>{{ userController.user.first_name }}</td>
+
+        </tr>
+        <tr>
+
+            <td>Last Name</td>
+            <td>{{ userController.user.last_name }}</td>
+
+        </tr>
+        <tr>
+
+            <td>Email</td>
+            <td>{{ userController.user.email }}</td>
+
+        </tr>
+        </tbody>
+
+    </table>
+
+    <h2>Projects</h2>
+
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Project</th>
+            <th>Created</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-ng-repeat="project in userController.projects">
+            <td>{{ project.title }}</td>
+            <td>{{ project.created_at }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p><a data-ui-sref="users">&laquo; Back</a></p>
+
+</div>

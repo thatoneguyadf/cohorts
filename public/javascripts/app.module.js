@@ -16,6 +16,12 @@
              */
 
             $stateProvider
+                .state('login', {
+                    url: '/login',
+                    templateUrl: 'partials/login/index.html',
+                    controller: 'LoginController',
+                    controllerAs: 'loginController'
+                })
                 .state('projects', {
                     url: '/projects',
                     templateUrl: 'partials/projects/index.html',

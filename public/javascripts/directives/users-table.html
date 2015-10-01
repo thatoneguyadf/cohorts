@@ -1,30 +1,31 @@
 <div>
-    <table data-ng-if="projects.length"
+    <table data-ng-if="users.length"
            class="table table-striped table-responsive">
 
         <thead>
         <tr>
 
-            <th>Project Title</th>
-            <th>User</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Email</th>
-            <th>Created</th>
+            <th></th>
             <th></th>
 
         </tr>
         </thead>
 
         <tbody>
-        <tr data-ng-repeat="project in projects">
+        <tr data-ng-repeat="user in users">
 
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
             <td>
-                <a data-ui-sref="projects.detail({projectId: project._id})">
-                    {{ project.title }}
+                <a data-ui-sref="user.detail({userId: user._id})"
+                   class="btn btn-xs">
+                    View User
                 </a>
             </td>
-            <td>{{ project.user.fullName() }}</td>
-            <td>{{ project.user.email }}</td>
-            <td>{{ project.created_at | niceDate: 'MM-DD-YYYY' }}</td>
             <td>
                 <a data-ng-click="edit(project)"
                    class="btn btn-xs">
@@ -44,7 +45,7 @@
 
     </table>
 
-    <div data-ng-if="!projects.length"
+    <div data-ng-if="!users.length"
          class="alert alert-info">
 
         Nothing to see here.
