@@ -105,6 +105,15 @@
 
             $rootScope.$on('$stateChangeStart', function (event, toState) {
 
+                if (window.localStorage.appUser) {
+
+                    var currentUser = JSON.parse(window.localStorage.appUser);
+
+                    Users.currentUser = currentUser.user;
+                    Users.currentUserToken = currentUser.token;
+
+                }
+
                 if (toState.data && toState.data.requireLogin) {
 
                     if (!Users.isLoggedIn()) {

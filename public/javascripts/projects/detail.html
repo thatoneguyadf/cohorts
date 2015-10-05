@@ -33,7 +33,11 @@
         <tbody>
         <tr>
 
-            <td>{{ projectController.project.user.fullName() }}</td>
+            <td>
+                <a data-ui-sref="users.detail({userId: projectController.project.user._id})">
+                    {{ projectController.project.user.fullName() }}
+                </a>
+            </td>
             <td>{{ projectController.project.user.email }}</td>
 
         </tr>

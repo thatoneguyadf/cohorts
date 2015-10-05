@@ -42,6 +42,8 @@
 
                 }).result.then(function (res) {
 
+                        debugger;
+
                         Users.put(res);
 
                     });

@@ -55,8 +55,12 @@
         </thead>
         <tbody>
         <tr data-ng-repeat="project in userController.projects">
-            <td>{{ project.title }}</td>
-            <td>{{ project.created_at }}</td>
+            <td>
+                <a data-ui-sref="projects.detail({projectId: project._id})">
+                    {{ project.title }}
+                </a>
+            </td>
+            <td>{{ project.created_at | niceDate: 'MM-DD-YYYY' }}</td>
         </tr>
         </tbody>
     </table>

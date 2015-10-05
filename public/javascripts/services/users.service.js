@@ -52,7 +52,13 @@
 
             vm.put = function put(userCopy) {
 
-                var data = {first_name: userCopy.first_name, last_name: userCopy.last_name, email: userCopy.email};
+                var data = {
+                    first_name: userCopy.first_name,
+                    last_name: userCopy.last_name,
+                    email: userCopy.email
+                };
+
+                debugger;
 
                 return $http.put('/users/' + userCopy._id, data)
                     .then(function (res) {
@@ -125,6 +131,7 @@
 
                       vm.currentUser = res.data.user;
                       vm.currentUserToken = res.data.token;
+                      window.localStorage.appUser = JSON.stringify({user: vm.currentUser, token: vm.currentUserToken});
 
                   });
 

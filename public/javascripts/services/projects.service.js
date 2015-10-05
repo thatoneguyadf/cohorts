@@ -27,7 +27,7 @@
             };
 
             vm.userProj = function projects(user) {
-                return _.find(vm.projects, {user: user});
+                return _.filter(vm.projects, {user: user});
             };
 
             /**
@@ -60,7 +60,11 @@
 
             vm.put = function put(projectCopy) {
 
-                var data = {title: projectCopy.title, user: projectCopy.user._id, detail: projectCopy.detail};
+                var data = {
+                    title: projectCopy.title,
+                    user: projectCopy.user._id,
+                    detail: projectCopy.detail
+                };
 
                 return $http.put('/projects/' + projectCopy._id, data)
                     .then(function (res) {
