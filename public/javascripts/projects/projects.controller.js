@@ -3,7 +3,7 @@
     'use strict';
 
     angular.module('app')
-        .controller('ProjectsController', function (projects, Projects, $modal, $rootScope) {
+        .controller('ProjectsController', function (projects, Projects, $modal, $rootScope, Users) {
 
             var vm = this;
 
@@ -49,6 +49,8 @@
             };
 
             vm.remove = Projects.del;
+
+            vm.currentUser = Users.currentUser;
 
         });
 

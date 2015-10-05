@@ -26,6 +26,10 @@
                 return _.find(vm.projects, {_id: projectId});
             };
 
+            vm.userProj = function projects(user) {
+                return _.find(vm.projects, {user: user});
+            };
+
             /**
              * Get out projects from the server
              *

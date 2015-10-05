@@ -1,5 +1,51 @@
-<div id="login" class="login">
+<div id="login"
+     class="login col-md-4 col-md-offset-4"
+     style="margin-top: 100px;">
 
-    <h1>The Content</h1>
+    <h1>Log In</h1>
+
+    <div class="alert alert-danger"
+         data-ng-if="loginController.loginFailed">
+
+        Could not log in
+
+    </div>
+
+    <form class="form form-login">
+
+        <div class="form-group">
+
+            <label for="email">Email</label>
+
+            <input type="text"
+                   required
+                   id="email"
+                   name="email"
+                   class="form-control"
+                   data-ng-model="loginController.creds.email"/>
+
+        </div>
+
+        <div class="form-froup">
+
+            <label for="password">Password</label>
+
+            <input type="password"
+                   required
+                   id="password"
+                   name="password"
+                   class="form-control"
+                   data-ng-model="loginController.creds.password"/>
+
+        </div>
+
+        <div class="form-group">
+            <button style="margin-top: 30px"
+                    class="btn btn-primary form-control"
+                    data-ng-click="loginController.login(loginController.creds)">Log In</button>
+        </div>
+
+
+    </form>
 
 </div>

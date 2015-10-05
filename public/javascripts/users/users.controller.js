@@ -9,13 +9,13 @@
 
             vm.users = users;
 
-            vm.addProject = function addProject() {
+            vm.addUser = function addUser() {
 
                 var modalInstance = $modal.open({
 
                     templateUrl: 'partials/users/new.html',
-                    controller: 'NewProjectCtrl',
-                    controllerAs: 'newProject',
+                    controller: 'NewUserCtrl',
+                    controllerAs: 'newUser',
                     size: 'md'
 
                 }).result.then(function (res) {
@@ -26,17 +26,17 @@
 
             };
 
-            vm.editProject = function editProject(project) {
+            vm.editUser = function editUser(user) {
 
                 var scope = $rootScope.$new();
 
-                scope.project = project;
+                scope.user = user;
 
                 var modalInstance = $modal.open({
 
                     templateUrl: 'partials/users/edit.html',
-                    controller: 'ProjectEditController',
-                    controllerAs: 'projectEditController',
+                    controller: 'UserEditController',
+                    controllerAs: 'userEditController',
                     size: 'md',
                     scope: scope
 

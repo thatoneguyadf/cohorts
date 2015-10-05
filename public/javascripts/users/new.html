@@ -1,0 +1,72 @@
+<div>
+
+    <div class="modal-header">
+
+        <h1>New User</h1>
+
+    </div>
+
+    <div class="modal-body">
+
+        <form name="newUserForm">
+
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text"
+                       required
+                       name="first_name"
+                       class="form-control"
+                       id="first_name"
+                       data-ng-model="newUser.user.first_name" />
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text"
+                       required
+                       name="last_name"
+                       class="form-control"
+                       id="last_name"
+                       data-ng-model="newUser.user.last_name" />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text"
+                       required
+                       name="email"
+                       class="form-control"
+                       id="email"
+                       data-ng-model="newUser.user.email" />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input class="form-control"
+                       type="password"
+                       name="password"
+                       required
+                       data-ng-model="newUser.user.password"
+                       id="password" />
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+
+        <button class="btn btn-info"
+                data-ng-click="newUser.close()"
+                data-ng-disabled="newUserForm.$invalid">
+            Save
+        </button>
+
+        <button class="btn btn-danger"
+                data-ng-click="newUser.dismiss()">
+            Cancel
+        </button>
+
+    </div>
+
+</div>

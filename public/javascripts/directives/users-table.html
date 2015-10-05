@@ -21,18 +21,18 @@
             <td>{{ user.last_name }}</td>
             <td>{{ user.email }}</td>
             <td>
-                <a data-ui-sref="user.detail({userId: user._id})"
+                <a data-ui-sref="users.detail({userId: user._id})"
                    class="btn btn-xs">
                     View User
                 </a>
             </td>
             <td>
-                <a data-ng-click="edit(project)"
+                <a data-ng-click="edit(user)"
                    class="btn btn-xs">
                     <i class="fa fa-pencil"></i>
                     Edit
                 </a>
-                <a data-ng-click="remove(project)"
+                <a data-ng-click="remove(user)"
                    style="color: red; margin-left: 10px;"
                    class="btn btn-xs">
                     <i class="fa fa-ban"></i>
