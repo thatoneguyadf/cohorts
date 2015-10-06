@@ -42,8 +42,6 @@
 
                 }).result.then(function (res) {
 
-                        debugger;
-
                         Users.put(res);
 
                     });
@@ -51,6 +49,8 @@
             };
 
             vm.remove = Users.del;
+
+            vm.currentUser = Users.currentUser;
 
         });
 

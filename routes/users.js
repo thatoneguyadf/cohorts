@@ -35,11 +35,13 @@ router.route('/:userId')
         });
     })
     .get(jwt.protect, function (req, res) {
-        User.find({user: req.user._id}, function (err, projects) {
+        /*User.find({user: req.user._id}, function (err, users) {
             res.json(req.user);
-        });
+        });*/
+        res.json(req.user);
     })
     .delete(jwt.protect, function (req, res) {
+        consol.log(req.user);
         req.user.remove(function (err) {
             if (err) return res.status(400).json(err);
 

@@ -18,10 +18,6 @@ function sign(payload, options) {
 
 function protect(req, res, next) {
 
-    //console.log(req.headers.authorization);
-
-    console.log(req);
-
     if (!req.headers.authorization) {
 
         return res.status(400).json({message: 'Must provide authorization token.'});

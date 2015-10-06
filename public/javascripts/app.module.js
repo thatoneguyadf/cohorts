@@ -105,7 +105,7 @@
 
             $rootScope.$on('$stateChangeStart', function (event, toState) {
 
-                if (window.localStorage.appUser) {
+                if (typeof window.localStorage.appUser === 'string' && window.localStorage.appUser !== '{}') {
 
                     var currentUser = JSON.parse(window.localStorage.appUser);
 

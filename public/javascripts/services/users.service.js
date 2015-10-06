@@ -58,8 +58,6 @@
                     email: userCopy.email
                 };
 
-                debugger;
-
                 return $http.put('/users/' + userCopy._id, data)
                     .then(function (res) {
                         var p = vm.find(userCopy._id);
