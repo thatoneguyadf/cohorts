@@ -66,6 +66,8 @@
 
                     }, function (err) {
 
+                        console.log(err);
+
                         //TODO: handle when we can't update a project
 
                     });
@@ -92,6 +94,8 @@
                         $state.go('users');
 
                     }, function (err) {
+
+                        console.log(err);
 
                         //TODO: handle when we can't delete a projects
 

@@ -28,7 +28,7 @@ router.route('/')
 
 router.route('/:projectId')
     .put(jwt.protect, function (req, res) {
-        req.project.update({$set: req.body}, {new: true}, function (err, result) {
+        req.project.update({$set: req.body}, {new: true}, function (err, project) {
             res.sendStatus(200);
         });
     })
