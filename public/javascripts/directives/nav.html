@@ -13,7 +13,13 @@
                 data-ng-if="nav.user">
                 Welccome {{ nav.user }}
             </li>
-            <li style="display: inline-block"><a class="btn" data-ng-click="nav.logout()">Log Out</a></li>
+            <li style="display: inline-block"
+                data-ng-if="nav.user">
+                <a class="btn"
+                   data-ng-click="nav.logout()">
+                    Log Out
+                </a>
+            </li>
         </ul>
     </tabset>
 </div>
