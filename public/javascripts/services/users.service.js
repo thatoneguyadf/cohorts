@@ -151,6 +151,16 @@
 
             };
 
+            vm.logout = function logout() {
+
+                vm.currentUser = null;
+                vm.currentUserToken = null;
+                window.localStorage.appUser = '';
+
+                $state.go('login');
+
+            };
+
         });
 
 }());
