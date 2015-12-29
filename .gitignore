@@ -2,6 +2,8 @@
 build/
 .env
 data/
+node_modules/
+public/bower_components/
 
 stuff
 
